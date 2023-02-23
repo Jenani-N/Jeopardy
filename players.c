@@ -25,8 +25,9 @@ bool player_exists(player *players, int num_players, char *name)
 void update_score(player *players, int num_players, char *name, int score)
 {
 	for(int i = 0; i < num_players; i++){
-		if(strcmp(players[i].name, name) == 0) //strcmp compares the characters from the first string to the last until both string characters are equal OR if a NULL character is found
+		if(strcmp(players[i].name, name) == 0){ //strcmp compares the characters from the first string to the last until both string characters are equal OR if a NULL character is found
 			players[i].score += score;
-	
+		}
+	}
     
 }
