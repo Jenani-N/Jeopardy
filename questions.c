@@ -10,11 +10,10 @@
 #include <string.h>
 #include "questions.h"
 
-question questions[NUM_QUESTIONS];
 // Initializes the array of questions for the game
 void initialize_game(void)
 {
-
+question questions[NUM_QUESTIONS];
     // initialize each question struct and assign it to the questions array
     //Q1
     questions[0].category = "animals";
@@ -152,3 +151,16 @@ bool already_answered(char *category, int value)
     	}
     }
 }
+
+//Returns true if the question has been marked as answered
+bool mark_answered (char *category, int value){
+    
+    for(int b = 0; b < NUM_QUESTIONS; b++){
+    
+    	if(strcmp(questions[b].category,category)==0 && questions[b].value==value){
+    		
+		questions[b].answered=true;
+    	}
+    		  
+    }
+    }
